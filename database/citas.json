@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "descripcion": "dragon to wapo",
+        "fecha_cita": "24-01-2025 15:30:00",
+        "cliente": "diego",
+        "tatuador": "pepe"
+    },
+    {
+        "id": 2,
+        "descripcion": "dragonsito",
+        "fecha_cita": "22-01-2025 18:30:00",
+        "cliente": "Pedro",
+        "tatuador": "Alicia"
+    }
+]
