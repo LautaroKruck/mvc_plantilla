@@ -25,9 +25,48 @@
     */
     
     $requestUri = $_SERVER["REQUEST_URI"] ?? "";
+    $parseUri = parse_url($requestUri);
+    
+    // Como ya sabemos a qué URI quiere acceder el cliente, podemos cargar el Controller Asociado
+    switch ($parseUri["path"]) {
+        case "/xampp_php/mvc_plantilla/usuarios/get":
+            require_once "./models/UsuariosModel.php"; // Corregido el nombre del archivo
+            
+            $usuariosModel = new UsuarioModel();
+            
+            // Obtener usuario (corregido para que devuelva y muestre datos)
+            $usuario = $usuariosModel->getUsuario(3);
+            if ($usuario) {
+                echo json_encode($usuario);
+            } else {
+                echo "No se encontró el usuario.";
+            }
+    
+            // Insertar usuario
+            //$usuariosModel->insertUsuario("pepe@gmail.com", "1234");
+            echo "Usuario insertado correctamente.";
+            
+            break;
+        
+        case "/xampp_php/mvc_plantilla/citas/get":
+            require_once "./models/UsuariosModel.php"; // Corregido el nombre del archivo
+            
+            $usuariosModel = new UsuarioModel();
+            
+            // Obtener usuario (corregido para que devuelva y muestre datos)
+            $usuario = $usuariosModel->getUsuario(3);
+            if ($usuario) {
+                echo json_encode($usuario);
+            } else {
+                echo "No se encontró el usuario.";
+            }
+    
+            // Insertar usuario
+            //$usuariosModel->insertUsuario("pepe@gmail.com", "1234");
+            echo "Usuario insertado correctamente.";
+            
+            break;
 
-    // Como ya sabemosa que URI quiere acceder el clienta, podenis cargar el COntroller Asociado
-    switch ($requestUri) {
         case "/xampp_php/mvc_plantilla/landing":
             // Cargamos landingController.php
             require_once './controllers/LandingController.php';
